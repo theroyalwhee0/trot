@@ -1,0 +1,52 @@
+{
+  "name": "@theroyalwhee0/trot",
+  "version": "0.0.1",
+  "description": "Trot: A scriptlet runner",
+  "author": "Adam Mill <theroyalwhee0@gmail.com>",
+  "license": "GPL-3.0-only",
+  "main": "src/index.js",
+  "keywords": [
+    "scriptlet"
+  ],
+  "bin": {
+    "trot": "src/cli.js"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theroyalwhee0/trot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theroyalwhee0/trot/issues"
+  },
+  "homepage": "https://github.com/theroyalwhee0/trot#readme",
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "6.2.0",
+    "nodemon": "1.19.1",
+    "sinon": "7.3.2"
+  },
+  "dependencies": {
+    "@theroyalwhee0/dynasty": "0.0.6",
+    "@theroyalwhee0/istype": "0.0.1",
+    "@theroyalwhee0/please": "2.0.1",
+    "bunyan": "1.8.12",
+    "bunyan-debug-stream": "2.0.0",
+    "dependency-graph": "0.8.0",
+    "mkdirp": "0.5.1",
+    "tmp": "0.1.0",
+    "toml": "3.0.0",
+    "yargs": "13.3.0"
+  },
+  "scripts": {
+    "start": "node --zero-fill-buffers src/index.js --",
+    "watch": "nodemon",
+    "test": "mocha --sort --recursive --check-leaks",
+    "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
+    "lint": "eslint src/**/*.js test/**/*.js",
+    "lint-fix": "eslint --fix src/**/*.js test/**/*.js"
+  }
+}

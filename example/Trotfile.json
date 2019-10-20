@@ -1,0 +1,12 @@
+{
+    "env": {
+        "WORLD": "World"
+    },
+    "actions": {
+        "json-hello": "echo Hello World!",
+        "json-cl": "echo Command Line: $*",
+        "json-env": "echo The env is the $WORLD!",
+        "json": "echo This is Trotfile.json!",
+        "overshadow": "echo From Trotfile.toml"
+    }
+}

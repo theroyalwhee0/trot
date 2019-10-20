@@ -1,0 +1,21 @@
+{
+  "name": "@example/example_3340a9013f1b5d35",
+  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Example package.json",
+  "author": "Bob Smith <bobsmith@example.com>",
+  "private": true,
+  "license": "Apache-2.0",
+  "keywords": [
+    "trot"
+  ],
+  "scripts": {
+    "pkg-test": "echo \"Error: no test specified\" && exit 1",
+    "pkg-hello": "echo pkg: Greetings from node world!",
+    "pkg-cl": "echo pkg: Command Line: ",
+    "pkg-args": "node ./node_args.js",
+    "pkgpj-sleep": "sleep 5",
+    "pkg-pwd": "pwd",
+    "overshadow": "echo From package.json"
+  }
+}
