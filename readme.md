@@ -4,11 +4,11 @@
 Trot is a scriptlet runner. It fills the same role as 'npm run-script', only without being specific to npm and being more flexible.
 
 ## Installation
-npm install @theroyalwhee0/trot
+npm -g install @theroyalwhee0/trot
 
 *or*
 
-yarn add @theroyalwhee0/trot
+yarn global add @theroyalwhee0/trot
 
 ## Usage.
 trot [...trot arguments] [action-name] [...action arguments]
@@ -37,7 +37,8 @@ See the examples/ folder for example usage.
 - NPM: https://www.npmjs.com/package/@theroyalwhee0/trot
 
 ## History
-- 0.0.1 Initial release
+- 0.0.2 Fix missing dependencies.
+- 0.0.1 Initial release.
 
 ## Legal & License
 Copyright 2019 Adam Mill

@@ -35,6 +35,7 @@
     "@theroyalwhee0/please": "2.0.1",
     "bunyan": "1.8.12",
     "bunyan-debug-stream": "2.0.0",
+    "chalk": "2.4.2",
     "dependency-graph": "0.8.0",
     "mkdirp": "0.5.1",
     "tmp": "0.1.0",
@@ -42,7 +43,7 @@
     "yargs": "13.3.0"
   },
   "scripts": {
-    "start": "node --zero-fill-buffers src/index.js --",
+    "start": "node --zero-fill-buffers -- src/cli.js",
     "watch": "nodemon",
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
