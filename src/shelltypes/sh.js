@@ -20,7 +20,7 @@ class ShShell extends ShellType {
   }
 
   get header() {
-    return '#!/bin/sh\n';
+    return '#!/usr/bin/env sh\n';
   }
 
   comment(text) {

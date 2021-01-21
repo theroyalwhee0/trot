@@ -20,7 +20,7 @@ class BashShell extends ShellType {
   }
 
   get header() {
-    return '#!/bin/bash\n';
+    return '#!/usr/bin/env bash\n';
   }
 
   comment(text) {

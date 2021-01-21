@@ -20,7 +20,7 @@ class Python2Shell extends ShellType {
   }
 
   get header() {
-    return '#!/usr/bin/python2\n';
+    return '#!/usr/bin/env python2\n';
   }
 
   comment(text) {

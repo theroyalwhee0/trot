@@ -22,7 +22,7 @@ const LOGLEVEL='TROT_LOGLEVEL';
  */
 function logFactory({
   name, level, pkg, pretty=true, basepath,
-  streamOptions, bunyan=bunyanLib, process=processLib
+  streamOptions, bunyan=bunyanLib, process=processLib,
 }={}) {
   level = level === undefined ? process.env[LOGLEVEL] || 'info' : level;
   level = bunyan.resolveLevel(level);
@@ -43,16 +43,16 @@ function logFactory({
   settings.level = level;
   if(pretty) {
     const debugStreamOptions = Object.assign({
-        basepath,
-        forceColor: true,
-      }, streamOptions);
+      basepath,
+      forceColor: true,
+    }, streamOptions);
     const debugStream = {
       level,
       type: 'raw',
       stream: bunyanDebugStream(debugStreamOptions),
     };
     Object.assign(settings, {
-      streams: [ debugStream ],
+      streams: [debugStream],
       serializers: bunyanDebugStream.serializers,
     });
   }

@@ -1,7 +1,7 @@
 [actions]
 start='node --zero-fill-buffers src --'
-watch='npx nodemon'
-test='npx mocha --sort --recursive --check-leaks'
-test-watch='npx mocha --watch --sort --recursive --reporter=dot --check-leaks'
-lint='npx eslint src/**/*.js test/**/*.js'
-lint-fix='npx eslint --fix src/**/*.js test/**/*.js'
+watch='nodemon'
+test='mocha --sort --recursive --check-leaks'
+test-watch='mocha --watch --sort --recursive --reporter=dot --check-leaks'
+lint='eslint src/ test/'
+

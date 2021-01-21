@@ -55,17 +55,18 @@ async function mapActionsToScriptRunners({ log, runScriptLoader, actionNames }) 
 /**
  * Run each given action.
  */
-async function runEachAction({ log, actions, args }) {
+async function runEachAction({ log, actions, dump, context, args }) {
   let lastAction = {
     name: null,
     exitCode: null,
   };
+  const cwd = process.cwd();
   for(let actionName in actions) {
     if(lastAction.exitCode !== null && lastAction.exitCode !== 0) {
       throw new Error(`Action "${lastAction.actionName}" has a non-zero exit code "${lastAction.exitCode}". Remaining actions skipped.`);
     }
     const action = actions[actionName];
-    const exitCode = await action.run({ actionName, args, log });
+    const exitCode = await action.run({ actionName, args, log, dump, context, cwd });
     lastAction = { actionName, exitCode };
   }
   process.exit(lastAction.exitCode);
@@ -76,12 +77,12 @@ async function runEachAction({ log, actions, args }) {
  */
 function runAllFactory(dyn) {
   const { log, runScriptLoader, commandLine } = dyn();
-  return async function runAll({ actionNames }) {
+  return async function runAll({ actionNames, dump, context }) {
     if(typeof actionNames === 'string') {
       actionNames = actionNames.split(',');
     }
     const actions = await mapActionsToScriptRunners({ log, runScriptLoader, actionNames });
-    await runEachAction({ log, actions, args: commandLine.runArgv });
+    await runEachAction({ log, actions, args: commandLine.runArgv, dump, context });
   };
 }
 

@@ -12,14 +12,14 @@ const { dynasty } = require('@theroyalwhee0/dynasty');
  */
 const { logFactory } = require('./logs');
 const { errorHandler } = require('./errors');
-const pkg = require('../package.json');
 const { applicationFactory } = require('./application');
+const pkg = require('../package.json');
 
 /**
  * Configuration.
  */
 const { commandLineFactory, commandLineActionsFactory } = require('./commandline');
-const { configureEnvironmentFactory } = require('./envconfig');
+// const { configureEnvironmentFactory } = require('./envconfig');
 
 /**
  * RunScripts.
@@ -87,15 +87,15 @@ async function trot() {
         'log',
         'commandLine',
         'listAll',
-        'runAll',
-        'configureEnvironment',
-      ),
+        'runAll'
+        // 'configureEnvironment'
+      )
     );
     // Configuration.
-    add('configureEnvironment',
-      once(configureEnvironmentFactory),
-      attach('log'),
-    );
+    // add('configureEnvironment',
+    //   once(configureEnvironmentFactory),
+    //   attach('log')
+    // );
     // Runscripts.
     add('runScriptLoader',
       once(runScriptsLoaderFactory),
@@ -103,67 +103,67 @@ async function trot() {
         'log',
         'trotfileToml',
         'trotfileJson',
-        'packageJson',
-      ),
+        'packageJson'
+      )
     );
     // Runscript Types.
     add('trotfileToml',
       once(trotfiletomlFactory),
-      attach('log', 'shellTypes'),
+      attach('log', 'shellTypes')
     );
     add('trotfileJson',
       once(trotfilejsonFactory),
-      attach('log', 'shellTypes'),
+      attach('log', 'shellTypes')
     );
     add('packageJson',
       once(packagejsonFactory),
-      attach('log'),
+      attach('log')
     );
 
     // Shell Types.
     add('shellTypes',
-        once(shellTypeFactory),
-        attach(
-            'log',
-            'shShell',
-            'bashShell',
-            'dashShell',
-            'python2Shell',
-            'python3Shell',
-            'nodeShell',
-            'perlShell',
-          ),
+      once(shellTypeFactory),
+      attach(
+        'log',
+        'shShell',
+        'bashShell',
+        'dashShell',
+        'python2Shell',
+        'python3Shell',
+        'nodeShell',
+        'perlShell'
+      )
     );
     add('python3Shell',
-        value(Python3Shell)
+      value(Python3Shell)
     );
     add('python2Shell',
-        value(Python2Shell)
+      value(Python2Shell)
     );
     add('perlShell',
-        value(PerlShell)
+      value(PerlShell)
     );
     add('bashShell',
-        value(BashShell)
+      value(BashShell)
     );
     add('dashShell',
-        value(DashShell)
+      value(DashShell)
     );
     add('nodeShell',
-        value(NodeShell)
+      value(NodeShell)
     );
     add('shShell',
-        value(ShShell)
+      value(ShShell)
     );
 
     // Tasks.
     add('listAll',
-       once(listAllFactory),
-       attach('runScriptLoader'),
+      once(listAllFactory),
+      attach('runScriptLoader')
     );
     add('runAll',
       once(runAllFactory),
-      attach('log', 'runScriptLoader', 'commandLine'),
+      attach('log', 'runScriptLoader', 'commandLine')
     );
   });
 };

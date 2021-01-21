@@ -20,7 +20,7 @@ class DashShell extends ShellType {
   }
 
   get header() {
-    return '#!/bin/dash\n';
+    return '#!/usr/bin/env dash\n';
   }
 
   comment(text) {

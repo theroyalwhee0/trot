@@ -20,7 +20,7 @@ class Python3Shell extends ShellType {
   }
 
   get header() {
-    return '#!/usr/bin/python3\n';
+    return '#!/usr/bin/env python3\n';
   }
 
   comment(text) {

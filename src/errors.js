@@ -36,7 +36,7 @@ function errorHandler({ log, process=processLib }={}) {
     try {
       log.error(err, 'Unhandled rejection.');
       let cause = err.parent;
-      const previousCauses = [ err , cause ];
+      const previousCauses = [ err, cause ];
       while(cause instanceof Error) {
         log.error(cause, 'Cause of unhandled rejection.');
         cause = cause.parent;
@@ -58,7 +58,7 @@ function errorHandler({ log, process=processLib }={}) {
     try {
       log.error(err, 'Unhandled exception.');
       let cause = err.parent;
-      const previousCauses = [ err , cause ];
+      const previousCauses = [ err, cause ];
       while(cause instanceof Error) {
         log.error(cause, 'Cause of unhandled exception.');
         cause = cause.parent;

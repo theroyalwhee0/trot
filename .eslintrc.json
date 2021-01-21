@@ -1,7 +1,6 @@
 {
     "env": {
         "commonjs": true,
-        "es6": true,
         "node": true
     },
     "globals": {
@@ -9,7 +8,7 @@
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2020
     },
     "rules": {
         "indent": [
@@ -48,7 +47,7 @@
         ],
         "comma-dangle": [
             "error",
-            { 
+            {
                 "objects": "always-multiline",
                 "arrays": "always-multiline"
             }

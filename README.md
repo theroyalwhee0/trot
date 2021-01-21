@@ -3,12 +3,14 @@
 ## Description.
 Trot is a scriptlet runner. It fills the same role as 'npm run-script', only without being specific to npm and being more flexible.
 
+
 ## Installation
 npm -g install @theroyalwhee0/trot
 
 *or*
 
 yarn global add @theroyalwhee0/trot
+
 
 ## Usage.
 trot [...trot arguments] [action-name] [...action arguments]
@@ -24,24 +26,31 @@ Trot will scan the current folder for any supported files. In each supported fil
 
 Multiple actions can be specified by providing a comma seperated list of actions. These actions will be run in order serially. (ex "clean,build,deploy")
 
+
 ## Supported file formats.
 Trot uses its own file format Trotfile.toml (or Trotfile.json if you prefer).
 
 It also supports package.json files and if a matching action is found in the package.json it will run that action though npm.
 
+
 ## Trotfile format.
 See the examples/ folder for example usage.
+
 
 ## Links
 - GitHub: https://github.com/theroyalwhee0/trot
 - NPM: https://www.npmjs.com/package/@theroyalwhee0/trot
 
+
 ## History
+- 0.0.3 Add node_modules/.bin to path if in working directory.
+        Add --dump to help with troubleshooting.
 - 0.0.2 Fix missing dependencies.
 - 0.0.1 Initial release.
 
+
 ## Legal & License
-Copyright 2019 Adam Mill
+Copyright 2019-2021 Adam Mill
 
 This application is released under GPL 3 license.
 See LICENSE for more details.

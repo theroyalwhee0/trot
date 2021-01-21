@@ -10,15 +10,14 @@ const { readFile } = require('fs').promises;
 const tmp = require('tmp');
 
 /**
- * Static init.
- */
-// TODO: Dirty, find a better way.
-tmp.setGracefulCleanup();
-
-/**
  * Make temporary file with optional contents.
  */
+let mkTempFileSetup = false;
 async function mkTempFile(contents) {
+  if(!mkTempFileSetup) {
+    mkTempFileSetup = true;
+    tmp.setGracefulCleanup();
+  }
   const tempFile = await new Promise((resolve, reject) => {
     const options = {
       prefix: 'trot_',

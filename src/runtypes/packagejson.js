@@ -28,7 +28,7 @@ function packagejsonFactory() {
     get env() {
       return { };
     }
-    async run({ actionName, args, log }) {
+    async run({ actionName, args, log, cwd }) {
       const shell = 'npm';
       const env = Object.assign({}, process.env, this.env);
       const exitCode = await new Promise((resolve, reject) => {

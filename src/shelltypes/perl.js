@@ -19,6 +19,10 @@ class PerlShell extends ShellType {
     return [ 'perl', '--', { script: true }, { args: true }];
   }
 
+  get header() {
+    return '#!/usr/bin/env perl\n';
+  }
+
   comment(text) {
     return `# ${text}\n`;
   }
