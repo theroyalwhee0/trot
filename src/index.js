@@ -19,7 +19,6 @@ const pkg = require('../package.json');
  * Configuration.
  */
 const { commandLineFactory, commandLineActionsFactory } = require('./commandline');
-// const { configureEnvironmentFactory } = require('./envconfig');
 
 /**
  * RunScripts.
@@ -88,14 +87,8 @@ async function trot() {
         'commandLine',
         'listAll',
         'runAll'
-        // 'configureEnvironment'
       )
     );
-    // Configuration.
-    // add('configureEnvironment',
-    //   once(configureEnvironmentFactory),
-    //   attach('log')
-    // );
     // Runscripts.
     add('runScriptLoader',
       once(runScriptsLoaderFactory),
