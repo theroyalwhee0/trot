@@ -43,10 +43,13 @@ See the examples/ folder for example usage.
 
 
 ## History
-- 0.0.3 Add node_modules/.bin to path if in working directory.
-        Add --dump to help with troubleshooting.
-- 0.0.2 Fix missing dependencies.
-- 0.0.1 Initial release.
+- v0.0.3 - 2021-01-20
+  - Add node_modules/.bin to path if in working directory.
+  - Add --dump to help with troubleshooting.
+- v0.0.2 - 2019-10-20
+  - Fix missing dependencies.
+- v0.0.1 - 2019-10-20
+  - Initial release.
 
 
 ## Legal & License
