@@ -35,11 +35,12 @@ function packagejsonFactory() {
         const spawnArgs = [ 'run', actionName, '--' ].concat(args);
         const shellSpawn = [ shell, ...spawnArgs ].join(' ');
         log.trace(`Running "${shellSpawn}".`);
-        const child = spawn(shell, spawnArgs, { env });
+        const child = spawn(shell, spawnArgs, {
+          env, cwd,
+          stdio: [ process.stdin, process.stdout, process.stderr ],
+        });
         child.once('close', resolve);
         child.on('error', reject);
-        child.stdout.on('data', process.stdout.write.bind(process.stdout));
-        child.stderr.on('data', process.stderr.write.bind(process.stderr));
       });
       return exitCode;
     }

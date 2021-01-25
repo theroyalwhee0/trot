@@ -50,12 +50,10 @@ function commandLineFactory(dyn) {
  * CommandLine Actions factory.
  */
 function commandLineActionsFactory(dyn) {
-  const { commandLine, configureEnvironment, listAll, runAll } = dyn();
+  const { commandLine, listAll, runAll } = dyn();
   const argv = commandLine.yargs.argv;
   return async function commandLineActions() {
-    if(argv.configure) {
-      await configureEnvironment();
-    } else if(argv.list) {
+    if(argv.list) {
       await listAll();
     } else if(argv._.length === 1) {
       const context = { };
