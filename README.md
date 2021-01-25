@@ -43,6 +43,8 @@ See the examples/ folder for example usage.
 
 
 ## History
+- v0.0.4 - 2021-01-25
+  - Fix stdio usage when running NPM.
 - v0.0.3 - 2021-01-20
   - Add node_modules/.bin to path if in working directory.
   - Add --dump to help with troubleshooting.
