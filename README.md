@@ -57,5 +57,4 @@ See the examples/ folder for example usage.
 ## Legal & License
 Copyright 2019-2021 Adam Mill
 
-This application is released under GPL 3 license.
-See LICENSE for more details.
+This application is released under GPL 3 license. See [LICENSE](https://github.com/theroyalwhee0/trot/blob/master/LICENSE) for more details.
