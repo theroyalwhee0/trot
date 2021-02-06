@@ -18,7 +18,7 @@ const LOGLEVEL='TROT_LOGLEVEL';
 /**
  * Log Factory.
  * @param  {Object} options Options for logger.
- * @return {BunyanLogger} A bunyan logger.
+ * @returns {BunyanLogger} A bunyan logger.
  */
 function logFactory({
   name, level, pkg, pretty=true, basepath,
