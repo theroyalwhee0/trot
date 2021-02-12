@@ -3,10 +3,10 @@
         "WORLD": "World"
     },
     "actions": {
+        "json": "echo This is from Trofile.json",
         "json-hello": "echo Hello World!",
         "json-cl": "echo Command Line: $*",
         "json-env": "echo The env is the $WORLD!",
-        "json": "echo This is Trotfile.json!",
-        "overshadow": "echo From Trotfile.toml"
+        "overshadow": "echo Overshadow from Trotfile.json"
     }
 }

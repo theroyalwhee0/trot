@@ -1,5 +1,5 @@
 /**
- * trot:src/tasks/list.js
+ * trot:src/list.js
  */
 
 /**
@@ -9,16 +9,24 @@ const chalkLib = require('chalk');
 const { isString } = require('@theroyalwhee0/istype');
 
 /**
- * ListAll factory.
+ * Show List factory.
  */
-function listAllFactory(dyn) {
-  const { runScriptLoader, chalk=chalkLib } = dyn();
+function showListFactory(dyn) {
+  const { loadScriptlets, chalk=chalkLib } = dyn();
+
+  // Colors.
   const cyan = chalk.cyan;
   const darkGreen = chalk.green;
   const green = chalk.bold.green;
   const darkYellow = chalk.yellow;
   const yellow = chalk.bold.yellow;
 
+  // Write.
+  const writeln = console.log;
+
+  /**
+   * Serialize an action value.
+   */
   function serializeAction(value, name) {
     if(isString(value)) {
       if(/[\n\r]/g.test(value)) {
@@ -46,14 +54,21 @@ function listAllFactory(dyn) {
     }
   }
 
-  return async function listAll() {
-    for await (let runScript of runScriptLoader()) {
-      console.log(`${darkYellow('[')} ${yellow(runScript.filename)} ${darkYellow(']')}`);
-      for(let actionName in runScript.actions) {
-        const action = runScript.actions[actionName];
-        console.log(`${cyan(actionName)} ${green('=')} ${serializeAction(action, actionName)}`);
+  /**
+   * Show List.
+   */
+  return async function showList({ cwd, recursive=false }={}) {
+    const scriptlets = await loadScriptlets({ cwd, recursive });
+    for(let scriptlet of scriptlets) {
+      const { scriptletType } = scriptlet;
+      const folder = scriptletType.relative ? scriptlet.relative + '/' : '';
+      writeln(`${darkYellow('[')} ${yellow(folder + scriptlet.fileName)} ${darkYellow(']')}`);
+      for(let actionName of scriptlet.actions) {
+        const action = scriptletType.source(scriptlet, actionName);
+        const serialized = serializeAction(action, actionName);
+        writeln(`${cyan(actionName)} ${green('=')} ${serialized}`);
       }
-      console.log('');
+      writeln('');
     }
   };
 }
@@ -62,5 +77,5 @@ function listAllFactory(dyn) {
  * Exports.
  */
 module.exports = {
-  listAllFactory,
+  showListFactory,
 };

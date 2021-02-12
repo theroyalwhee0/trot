@@ -1,7 +1,5 @@
 [actions]
-start='node --zero-fill-buffers src --'
-watch='nodemon'
+start='node src/cli.js -- $*'
 test='mocha --sort --recursive --check-leaks'
 test-watch='mocha --watch --sort --recursive --reporter=dot --check-leaks'
 lint='eslint src/ test/'
-

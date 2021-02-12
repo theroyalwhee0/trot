@@ -1,0 +1,5 @@
+# TOML files can have comments!
+
+[actions]
+hello='echo Hello World!'
+subfolder='echo This is from a subfolder.'

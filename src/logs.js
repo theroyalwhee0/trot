@@ -5,7 +5,6 @@
 /**
  * Imports.
  */
-const path = require('path');
 const bunyanLib = require('bunyan');
 const bunyanDebugStream = require('bunyan-debug-stream');
 const processLib = process;
@@ -24,7 +23,7 @@ function logFactory({
   name, level, pkg, pretty=true, basepath,
   streamOptions, bunyan=bunyanLib, process=processLib,
 }={}) {
-  level = level === undefined ? process.env[LOGLEVEL] || 'info' : level;
+  level = level === undefined ? process.env[LOGLEVEL] || 'error' : level;
   level = bunyan.resolveLevel(level);
   if(!name) {
     if(pkg) {

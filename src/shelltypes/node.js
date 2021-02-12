@@ -3,30 +3,29 @@
  */
 
 /**
- * Imports.
+ * Node Shell factory.
  */
-const { ShellType } = require('./base');
-
-/**
- * Node shell.
- */
-class NodeShell extends ShellType {
-  get name() {
-    return 'node';
-  }
-
-  get template() {
-    return [ 'node', { script: true }, '--', { args: true }];
-  }
-
-  comment(text) {
-    return `// ${text}\n`;
-  }
+function nodeShellFactory() {
+  return {
+    name: 'node',
+    get template() {
+      return [ 'node', { script: true }, '--', { args: true }];
+    },
+    get header() {
+      return '#!/usr/bin/env node\n';
+    },
+    comment(text) {
+      return `// ${text}\n`;
+    },
+    body(text) {
+      return text + '\n';
+    },
+  };
 }
 
 /**
  * Exports.
  */
 module.exports = {
-  NodeShell,
+  nodeShellFactory,
 };

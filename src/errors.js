@@ -5,7 +5,6 @@
 /**
  * Constants.
  */
-const { TaskError } = require('./utility/errors');
 const processLib = process;
 
 /**
@@ -76,7 +75,6 @@ function errorHandler({ log, process=processLib }={}) {
     }
     errorExit(EXIT_UNHANDLED);
   });
-  log.trace('Error handling started.');
 }
 
 /**

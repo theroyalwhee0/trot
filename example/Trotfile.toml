@@ -4,21 +4,23 @@
 WORLD='World'
 
 [actions]
+toml='echo This is from Trofile.toml'
 hello='echo Hello World!'
 cl='echo Command Line: $*'
 env='echo The env is the $WORLD!'
 err='exit 1'
 ok='exit 0'
+group=['hello','env']
+alias=['hello']
 repl='python3'
 pwd='pwd'
 sleep='sleep 10'
-overshadow="echo From Trotfile.toml"
+overshadow="echo Overshadow from Trotfile.toml"
 multiline='''echo "1"
 echo "2"
 echo "3"
 '''
 sh={ shell='sh', action='echo "- sh: $*"' }
-dash={ shell='dash', action='echo "- dash: $*"' }
 bash={ shell='bash', action='echo "- bash: $*"' }
 python2={ shell='python2', action='import sys;print "- python2:", sys.argv[2:]' }
 python3={ shell='python3', action='import sys;print("- python3:", sys.argv[2:])' }

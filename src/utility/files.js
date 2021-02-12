@@ -1,5 +1,5 @@
 /**
- * trot:src/files.js
+ * trot:src/utility/files.js
  */
 
 /**
@@ -44,14 +44,15 @@ async function mkTempFile(contents) {
 }
 
 /**
- * Try to read a text file, if not found return noValue.
+ * Try to read a text file.
  */
-async function tryReadTextFile(fileName, noValue=null) {
+async function tryReadTextFile(fileName, fs) {
   try {
-    return await readFile(fileName, 'utf8');
+    const contents = await fs.readFile(fileName, 'utf8');
+    return [ contents, true ];
   } catch(ex) {
     if(ex instanceof Error && ex.code === 'ENOENT') {
-      return noValue;
+      return [ undefined, false ];
     }
     throw ex;
   }

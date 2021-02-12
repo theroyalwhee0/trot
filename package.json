@@ -1,6 +1,6 @@
 {
   "name": "@theroyalwhee0/trot",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Trot: A scriptlet runner",
   "author": "Adam Mill <hismajesty@theroyalwhee.com>",
   "license": "GPL-3.0-only",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@theroyalwhee0/dynasty": "0.0.9",
     "@theroyalwhee0/istype": "0.0.1",
-    "@theroyalwhee0/please": "2.0.1",
+    "@theroyalwhee0/please": "2.0.2",
     "bunyan": "1.8.15",
     "bunyan-debug-stream": "2.0.0",
     "chalk": "2.4.2",
@@ -43,8 +43,7 @@
     "yargs": "16.2.0"
   },
   "scripts": {
-    "start": "node --zero-fill-buffers -- src/cli.js",
-    "watch": "nodemon",
+    "start": "node src/cli.js -- $*",
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
     "lint": "eslint src/ test/"

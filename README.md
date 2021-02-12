@@ -37,12 +37,23 @@ It also supports package.json files and if a matching action is found in the pac
 See the examples/ folder for example usage.
 
 
+## Source Code Terminology
+- Run Type - The source where the scriptlets are pulled from (package.json, Trotfile.toml, etc.)
+- Shell Type - These are the types of shell scripts that can be used as scriptlets from a Trotfile. (bash, python3, perl, etc.)
+
+
 ## Links
 - GitHub: https://github.com/theroyalwhee0/trot
 - NPM: https://www.npmjs.com/package/@theroyalwhee0/trot
 
 
 ## History
+- v1.0.0
+  - Add groups/alias support to Trotfiles.
+  - Add experimental recursive directory support.
+  - Remove 'dash' shell support.
+  - Improve debug logging.
+  - Major reorganization to support new features.
 - v0.0.4 - 2021-01-25
   - Fix stdio usage when running NPM.
 - v0.0.3 - 2021-01-20

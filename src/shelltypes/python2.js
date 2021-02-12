@@ -3,34 +3,29 @@
  */
 
 /**
- * Imports.
+ * Python2 Shell factory.
  */
-const { ShellType } = require('./base');
-
-/**
- * Python 2 shell.
- */
-class Python2Shell extends ShellType {
-  get name() {
-    return 'python2';
-  }
-
-  get template() {
-    return [ 'python2', { script: true }, '--', { args: true }];
-  }
-
-  get header() {
-    return '#!/usr/bin/env python2\n';
-  }
-
-  comment(text) {
-    return `# ${text}\n`;
-  }
+function python2ShellFactory() {
+  return {
+    name: 'python2',
+    get template() {
+      return [ 'python2', { script: true }, '--', { args: true }];
+    },
+    get header() {
+      return '#!/usr/bin/env python2\n';
+    },
+    comment(text) {
+      return `# ${text}\n`;
+    },
+    body(text) {
+      return text + '\n';
+    },
+  };
 }
 
 /**
  * Exports.
  */
 module.exports = {
-  Python2Shell,
+  python2ShellFactory,
 };

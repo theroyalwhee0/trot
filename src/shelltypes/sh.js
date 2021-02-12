@@ -3,34 +3,29 @@
  */
 
 /**
- * Imports.
+ * sh Shell factory.
  */
-const { ShellType } = require('./base');
-
-/**
- * Sh shell.
- */
-class ShShell extends ShellType {
-  get name() {
-    return 'sh';
-  }
-
-  get template() {
-    return [ 'sh', '--', { script: true }, { args: true }];
-  }
-
-  get header() {
-    return '#!/usr/bin/env sh\n';
-  }
-
-  comment(text) {
-    return `# ${text}\n`;
-  }
+function shShellFactory() {
+  return {
+    name: 'sh',
+    get template() {
+      return [ 'sh', '--', { script: true }, { args: true }];
+    },
+    get header() {
+      return '#!/usr/bin/env sh\n';
+    },
+    comment(text) {
+      return `# ${text}\n`;
+    },
+    body(text) {
+      return text + '\n';
+    },
+  };
 }
 
 /**
  * Exports.
  */
 module.exports = {
-  ShShell,
+  shShellFactory,
 };
