@@ -12,8 +12,11 @@ const { isArray } = require('@theroyalwhee0/istype');
  */
 async function resolveActions({ scriptlets, actions }) {
   if(!isArray(actions)) {
-    // Strip trailing comma off and split.
-    actions = actions.replace(/,$/, '').split(',');
+    actions = actions.split(',');
+  }
+  if(actions[actions.length-1] === '') {
+    // If last item is blank then the actions list had a trailing comma. Drop it.
+    actions = actions.slice(0, -1);
   }
   let resolved = [ ];
   for(let actionName of actions) {

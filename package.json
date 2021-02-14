@@ -30,7 +30,7 @@
     "sinon": "9.2.3"
   },
   "dependencies": {
-    "@theroyalwhee0/dynasty": "0.0.9",
+    "@theroyalwhee0/dynasty": "1.0.1",
     "@theroyalwhee0/istype": "0.0.1",
     "@theroyalwhee0/please": "2.0.2",
     "bunyan": "1.8.15",
@@ -46,6 +46,7 @@
     "start": "node src/cli.js -- $*",
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
-    "lint": "eslint src/ test/"
+    "lint": "eslint src/ test/",
+    "dryrun": "npm test && npm run lint && npm audit && npm publish --dry-run"
   }
 }

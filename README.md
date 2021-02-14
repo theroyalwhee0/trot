@@ -50,7 +50,7 @@ See the examples/ folder for example usage.
 ## History
 - v1.0.0
   - Add groups/alias support to Trotfiles.
-  - Add experimental recursive directory support.
+  - Add recursive directory support.
   - Remove 'dash' shell support.
   - Improve debug logging.
   - Major reorganization to support new features.

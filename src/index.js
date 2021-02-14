@@ -52,7 +52,7 @@ async function trot() {
     console.error('An error occured setting up logging or error handling:', err);
     process.exit(1);
   }
-  await dynasty(async ({ add, once, entryPoint, value, attach, depends, collect, extend }) => {
+  await dynasty(async ({ add, once, entryPoint, value, attach, depends, collect }) => {
     // General.
     add('main', entryPoint(), depends('app'));
     add('log', value(log));
