@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@theroyalwhee0/dynasty": "1.0.1",
-    "@theroyalwhee0/istype": "0.0.1",
+    "@theroyalwhee0/istype": "2.0.2",
     "@theroyalwhee0/please": "2.0.2",
     "bunyan": "1.8.15",
     "bunyan-debug-stream": "2.0.0",
