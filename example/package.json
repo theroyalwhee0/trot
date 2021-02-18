@@ -14,7 +14,7 @@
     "pkg-test": "echo \"Error: no test specified\" && exit 1",
     "pkg-hello": "echo pkg: Greetings from node world!",
     "pkg-cl": "echo pkg: Command Line: ",
-    "pkg-args": "node ./node_args.js",
+    "pkg-args": "node ./files/node_args.js",
     "pkgpj-sleep": "sleep 5",
     "pkg-pwd": "pwd",
     "overshadow": "echo Overshadow from package.json"
