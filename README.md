@@ -48,7 +48,7 @@ See the examples/ folder for example usage.
 
 
 ## History
-- v1.0.0
+- v1.0.0 - 2021-02-18
   - Add groups/alias support to Trotfiles.
   - Add recursive directory support.
   - Remove 'dash' shell support.
