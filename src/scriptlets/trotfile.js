@@ -10,6 +10,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const toml = require('toml');
 const { isArray, isObject } = require('@theroyalwhee0/istype');
+const { AppError } = require('../utility/exceptions');
 const { mkTempFile:mkTempFileLib } = require('../utility/files');
 
 /**
@@ -102,7 +103,7 @@ function trotfileFactory(dyn) {
     const shellType = isObject(action) ? action.shell : 'bash';
     const shell = shellTypes[shellType];
     if(!shell) {
-      throw new Error(`Unsupported shell type "${shellType}" for "${actionName}".`);
+      throw new AppError(`Unsupported shell type "${shellType}" for "${actionName}".`);
     }
     let contents = '';
     if('header' in shell) {

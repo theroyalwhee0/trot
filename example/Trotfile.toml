@@ -26,3 +26,6 @@ python2={ shell='python2', action='import sys;print "- python2:", sys.argv[2:]' 
 python3={ shell='python3', action='import sys;print("- python3:", sys.argv[2:])' }
 perl={ shell='perl', action='print "- perl: ", join(" ", @ARGV), "\n";' }
 node={ shell='node', action='console.log(`- node:`, process.argv.slice(3));' }
+# badshell should fail, BASICA is not a valid shell type.
+badshell={ shell='BASICA', action='10 PRINT "Hello"' }
+

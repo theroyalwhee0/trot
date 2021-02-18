@@ -1,5 +1,9 @@
 /**
- * trot:src/index.js
+ * @file Trot: A scriptlet runner
+ * @version v1.0.0
+ * @author Adam Mill <hismajesty@theroyalwhee.com>
+ * @copyright Copyright 2019-2021 Adam Mill
+ * @license Apache-2.0
  */
 
 /**
