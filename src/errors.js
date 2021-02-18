@@ -3,20 +3,15 @@
  */
 
 /**
- * Constants.
+ * Imports.
  */
+const { exitMeanings, EXIT_UNKNOWN, EXIT_UNHANDLED } = require('./utility/exitcodes');
 const processLib = process;
 
 /**
- * Exit Codes.
+ * Constants.
  */
 const MAXCAUSEDEPTH = 8;
-const EXIT_UNKNOWN = 127;
-const EXIT_UNHANDLED = 126;
-const exitMeanings = {
-  [EXIT_UNKNOWN]: 'Unknown error.',
-  [EXIT_UNHANDLED]: 'Unhandled error.',
-};
 
 /**
  * Error Handler.

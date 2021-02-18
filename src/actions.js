@@ -6,6 +6,7 @@
  * Imports.
  */
 const { isArray } = require('@theroyalwhee0/istype');
+const { AppError } = require('./utility/exceptions');
 
 /**
  * Resolve actions to scriptlets.
@@ -62,7 +63,7 @@ function runActionsFactory(dyn) {
     // Figure out any actions that are missing.
     const missing = resolvedActions.filter((item) => item.notFound).map((item) => item.actionName);
     if(missing.length) {
-      throw new Error(`Action(s) "${missing.join(', ')}" not found.`);
+      throw new AppError(`Action${missing.length > 1 ? 's' : ''} "${missing.join(', ')}" not found.`);
     }
     let exitCode = 0;
     for(let idx=0; idx < resolvedActions.length; idx++) {
