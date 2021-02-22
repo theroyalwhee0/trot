@@ -6,7 +6,7 @@
  * Imports.
  */
 const fs = require('fs');
-const { readFile } = require('fs').promises;
+const fsp = require('fs/promises');
 const tmp = require('tmp');
 
 /**
@@ -48,7 +48,7 @@ async function mkTempFile(contents) {
  */
 async function tryReadTextFile(fileName, fs) {
   try {
-    const contents = await fs.readFile(fileName, 'utf8');
+    const contents = await fsp.readFile(fileName, 'utf8');
     return [ contents, true ];
   } catch(ex) {
     if(ex instanceof Error && ex.code === 'ENOENT') {
