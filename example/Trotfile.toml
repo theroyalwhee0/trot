@@ -4,7 +4,7 @@
 WORLD='World'
 
 [actions]
-toml='echo This is from Trofile.toml'
+toml='echo This is from Trotfile.toml'
 hello='echo Hello World!'
 cl='echo Command Line: $*'
 env='echo The env is the $WORLD!'
