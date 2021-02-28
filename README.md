@@ -34,7 +34,11 @@ It also supports package.json files and if a matching action is found in the pac
 
 
 ## Trotfile format.
-See the examples/ folder for example usage.
+See [Trotfile.format.md](./Trotfile.format.md) for documentation on the Trotfile.toml format.
+
+Trot also supports Trotfile.json files using the same structure as .toml files.
+
+See the [examples/](./examples/) folder for example usage.
 
 
 ## Debugging.
