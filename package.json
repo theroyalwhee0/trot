@@ -25,6 +25,7 @@
   "homepage": "https://github.com/theroyalwhee0/trot#readme",
   "devDependencies": {
     "chai": "4.2.0",
+    "eslint": "7.17.0",
     "mocha": "8.2.1",
     "nodemon": "2.0.7",
     "sinon": "9.2.3"
