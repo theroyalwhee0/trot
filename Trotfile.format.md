@@ -25,7 +25,7 @@ init='node initialize.js'
 
 The `[actions]` section specifies the various actions that can be run. The left hand value is the name of the action and the right hand side is run as a bash script when specified. For example `trot start` would run 'node index.js' under a bash script.
 
-Since the actions are run in a bash script so returns via `exit`, arguments via `$*` or `$1`, or bash functions are valid.
+Since the actions are run in a bash script returns via `exit`, arguments via `$*` or `$1`, or bash functions are valid.
 
 
 ## Environment
