@@ -37,6 +37,12 @@ It also supports package.json files and if a matching action is found in the pac
 See the examples/ folder for example usage.
 
 
+## Debugging.
+Use the environment variable 'TROT_LOGLEVEL' to control logging. Setting it to warn, info, debug, or trace will provide additional details. For example `TROT_LOGLEVEL='trace' trot --list`.
+
+The `--dump` command will display the details of an action without running that action. For example, assuming there is an action named 'start', `trot --dump start`.
+
+
 ## Source Code Terminology
 - Run Type - The source where the scriptlets are pulled from (package.json, Trotfile.toml, etc.)
 - Shell Type - These are the types of shell scripts that can be used as scriptlets from a Trotfile. (bash, python3, perl, etc.)
