@@ -48,6 +48,9 @@ See the examples/ folder for example usage.
 
 
 ## History
+- v1.0.1
+  - Add --dump support for package.json.
+  - Fix missing eslint dev depends.
 - v1.0.0 - 2021-02-18
   - Add groups/alias support to Trotfiles.
   - Add recursive directory support.
