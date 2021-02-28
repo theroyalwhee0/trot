@@ -38,7 +38,7 @@ See [Trotfile.format.md](./Trotfile.format.md) for documentation on the Trotfile
 
 Trot also supports Trotfile.json files using the same structure as .toml files.
 
-See the [examples/](./examples/) folder for example usage.
+See the [examples](./example/) folder for sample usage.
 
 
 ## Debugging.
