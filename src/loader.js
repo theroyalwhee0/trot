@@ -40,16 +40,17 @@ function loadScriptletsFactory(dyn) {
       const fullPath = path.resolve(folder, fileName);
       const [ contents, found ] = await tryReadTextFile(fullPath, fs);
       if(found) {
+        const fullFolder = path.dirname(fullPath);
         const scriptletType = scriptletTypeList[idx];
         const relativePath = path.relative(rootFolder, fullPath);
         log.debug(`Found '${scriptletType.type}' at '${relativePath}`);
         const context = {
-          scriptletType, fileName, fullPath,
+          scriptletType, fileName, fullPath, fullFolder,
           relative: path.relative(rootFolder, path.resolve(fullPath, '..')),
           env: {}, actions: [],
         };
         loaded.push(context);
-        await scriptletType.load(context, { fileName, fullPath, contents });
+        await scriptletType.load(context, { fileName, contents });
       }
     }
     if(recursive) {
@@ -61,7 +62,7 @@ function loadScriptletsFactory(dyn) {
         }
         if(ignoreFolders.includes(entry.name)) {
           // Ignore folders in ignore list.
-          log.trace(`Skipping '${entry.name}' during recursive load.`);
+          log.trace(`Skipping '${entry.name}' during recursive scan.`);
           continue;
         }
         const subloaded = await loadScriptlets({

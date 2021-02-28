@@ -74,9 +74,9 @@ function runActionsFactory(dyn) {
         log.trace(`Action '${actionName}' resolved to groups '${group.join(',')}'.`);
         continue;
       }
-      const { relative, fileName, scriptletType, fullPath } = scriptlet;
+      const { relative, fileName, scriptletType, fullPath, fullFolder } = scriptlet;
       log.info(`Running action '${actionName}' from '${relative ? relative + '/' : ''}${fileName}'.`);
-      exitCode = await scriptletType.run(scriptlet, { actionName, fullPath, args, cwd, dump });
+      exitCode = await scriptletType.run(scriptlet, { actionName, fullPath, fullFolder, args, cwd, dump });
       log.trace(`Finished running action '${actionName}'.`);
       if(exitCode !== 0 && idx+1 < resolvedActions.length) {
         log.warn(`'${actionName}' had a non-zero exit code. Skipping remaining actions.`);

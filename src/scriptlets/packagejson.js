@@ -40,7 +40,7 @@ function packageJsonFactory(dyn) {
   /**
    * Run an action.
    */
-  async function run(context, { actionName, fullPath, args, cwd, dump }) {
+  async function run(context, { actionName, fullPath, fullFolder, args, cwd, dump }) {
     const shell = 'npm';
     const env = Object.assign({}, process.env, context.env);
     const exitCode = await new Promise((resolve, reject) => {
@@ -48,16 +48,17 @@ function packageJsonFactory(dyn) {
       const shellSpawn = [ shell, ...spawnArgs ].join(' ');
       if(dump) {
         const contents = context.data.scripts[actionName];
-        console.log(`> Action '${actionName}' from '${fullPath}':`);
+        console.log(`> Action '${actionName}' at '${fullPath}':`);
         console.log(`\$ ${shellSpawn}`);
         console.log('-----');
         console.log(contents);
         console.log();
         return { exitCode: 0 };
       }
-      log.trace(`Running "${shellSpawn}".`);
+      log.trace(`Running "${shellSpawn}" from '${fullFolder}'.`);
       const child = spawn(shell, spawnArgs, {
-        env, cwd,
+        env,
+        cwd: fullFolder, // NOTE: NPM need to be run from whereever the package.json is.
         stdio: [ process.stdin, process.stdout, process.stderr ],
       });
       child.once('close', resolve);

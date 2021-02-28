@@ -128,7 +128,7 @@ function trotfileFactory(dyn) {
     }
     const logSpawn = [ spawnShell, ...spawnArgs ].join(' ');
     if(dump) {
-      console.log(`> Action '${actionName}' from '${fullPath}':`);
+      console.log(`> Action "${actionName}" at "${fullPath}":`);
       console.log(`\$ ${logSpawn}`);
       console.log('-----');
       console.log(contents);
@@ -136,7 +136,7 @@ function trotfileFactory(dyn) {
       return { exitCode: 0 };
     }
     const exitCode = await new Promise((resolve, reject) => {
-      log.trace(`Running "${logSpawn}".`);
+      log.trace(`Running "${logSpawn}" from "${cwd}".`);
       const child = spawn(spawnShell, spawnArgs, {
         env, cwd,
         stdio: [ process.stdin, process.stdout, process.stderr ],
