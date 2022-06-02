@@ -58,7 +58,7 @@ The `--dump` command will display the details of an action without running that 
 
 
 ## History
-- v1.0.1 - 2022-05-02
+- v1.0.1 - 2022-06-02
   - Bump depends.
   - Add --dump support for package.json.
   - Fix missing eslint dev depends.
