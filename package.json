@@ -26,14 +26,14 @@
   "devDependencies": {
     "chai": "4.2.0",
     "eslint": "7.17.0",
-    "mocha": "8.2.1",
+    "mocha": "10.0.0",
     "nodemon": "2.0.7",
     "sinon": "9.2.3"
   },
   "dependencies": {
-    "@theroyalwhee0/dynasty": "1.0.1",
-    "@theroyalwhee0/istype": "2.0.2",
-    "@theroyalwhee0/please": "2.0.2",
+    "@theroyalwhee0/dynasty": "1.0.4",
+    "@theroyalwhee0/istype": "3.0.2",
+    "@theroyalwhee0/please": "2.0.5",
     "bunyan": "1.8.15",
     "bunyan-debug-stream": "2.0.0",
     "chalk": "2.4.2",
@@ -48,6 +48,7 @@
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
     "lint": "eslint src/ test/",
-    "dryrun": "npm test && npm run lint && npm audit && npm publish --dry-run"
+    "dryrun": "npm test && npm run lint && npm audit && npm publish --dry-run",
+    "audit-prod": "npm audit --omit dev --omit optional"
   }
 }
