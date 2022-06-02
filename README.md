@@ -5,11 +5,11 @@ Trot is a scriptlet runner. It fills the same role as 'npm run-script', only wit
 
 
 ## Installation
-npm -g install @theroyalwhee0/trot
+`npm -g install @theroyalwhee0/trot`
 
 *or*
 
-yarn global add @theroyalwhee0/trot
+`yarn global add @theroyalwhee0/trot`
 
 
 ## Usage.
@@ -58,7 +58,8 @@ The `--dump` command will display the details of an action without running that 
 
 
 ## History
-- v1.0.1
+- v1.0.1 - 2022-05-02
+  - Bump depends.
   - Add --dump support for package.json.
   - Fix missing eslint dev depends.
 - v1.0.0 - 2021-02-18
