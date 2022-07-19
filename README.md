@@ -58,6 +58,8 @@ The `--dump` command will display the details of an action without running that 
 
 
 ## History
+- v1.0.2 - 2022-07-19
+  - Bump depends.
 - v1.0.1 - 2022-06-02
   - Bump depends.
   - Add --dump support for package.json.
