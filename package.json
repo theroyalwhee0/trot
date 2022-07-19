@@ -1,6 +1,6 @@
 {
   "name": "@theroyalwhee0/trot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Trot: A scriptlet runner",
   "author": "Adam Mill <hismajesty@theroyalwhee.com>",
   "license": "GPL-3.0-only",
@@ -27,7 +27,7 @@
     "chai": "4.2.0",
     "eslint": "7.17.0",
     "mocha": "10.0.0",
-    "nodemon": "2.0.7",
+    "nodemon": "2.0.19",
     "sinon": "9.2.3"
   },
   "dependencies": {
@@ -49,6 +49,6 @@
     "test-watch": "mocha --watch --sort --recursive --reporter=dot --check-leaks",
     "lint": "eslint src/ test/",
     "dryrun": "npm test && npm run lint && npm audit && npm publish --dry-run",
-    "audit-prod": "npm audit --omit dev --omit optional"
+    "audit": "npm audit --omit dev"
   }
 }
