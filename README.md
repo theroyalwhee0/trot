@@ -19,7 +19,7 @@ Running "trot --help" will display the command line help.
 
 Running "trot --list" will display the available actions in the current folder and their source files.
 
-The action name is a string that that matches an action in the a source files. Actions names must be alpha numeric + dash and not start with '--' or '-'. Arguments before the action name are consumed by trot.
+The action name is a string that matches an action in the source files. Action names must be alpha numeric + dash and not start with '--' or '-'. Arguments before the action name are consumed by trot.
 Any arguments after the action name are passed to the scriptlet.
 
 Trot will scan the current folder for any supported files. In each supported file it will check to see if the action is present and run it if found.
