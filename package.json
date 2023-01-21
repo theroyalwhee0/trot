@@ -1,8 +1,8 @@
 {
   "name": "@theroyalwhee0/trot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Trot: A scriptlet runner",
-  "author": "Adam Mill <hismajesty@theroyalwhee.com>",
+  "author": "Adam Mill <hismajesty@theroyalwhee.com> (https://www.theroyalwhee.com)",
   "license": "GPL-3.0-only",
   "main": "src/index.js",
   "keywords": [

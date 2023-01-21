@@ -55,33 +55,10 @@ The `--dump` command will display the details of an action without running that 
 ## Links
 - GitHub: https://github.com/theroyalwhee0/trot
 - NPM: https://www.npmjs.com/package/@theroyalwhee0/trot
-
-
-## History
-- v1.0.2 - 2022-07-19
-  - Bump depends.
-- v1.0.1 - 2022-06-02
-  - Bump depends.
-  - Add --dump support for package.json.
-  - Fix missing eslint dev depends.
-- v1.0.0 - 2021-02-18
-  - Add groups/alias support to Trotfiles.
-  - Add recursive directory support.
-  - Remove 'dash' shell support.
-  - Improve debug logging.
-  - Major reorganization to support new features.
-- v0.0.4 - 2021-01-25
-  - Fix stdio usage when running NPM.
-- v0.0.3 - 2021-01-20
-  - Add node_modules/.bin to path if in working directory.
-  - Add --dump to help with troubleshooting.
-- v0.0.2 - 2019-10-20
-  - Fix missing dependencies.
-- v0.0.1 - 2019-10-20
-  - Initial release.
+- Changelog: https://github.com/theroyalwhee0/trot/blob/main/changelog.md
 
 
 ## Legal & License
-Copyright 2019-2021 Adam Mill
+Copyright 2019-2023 Adam Mill
 
 This application is released under GPL 3 license. See [LICENSE](https://github.com/theroyalwhee0/trot/blob/master/LICENSE) for more details.
